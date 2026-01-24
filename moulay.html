@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moulay Chrif BAHRI – Digital Card</title>
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f5f5f5;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+    .card{
+      background:#fff;
+      width:100%;
+      max-width:420px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+      padding:25px;
+      text-align:center;
+    }
+    .logo{
+      width:90px;
+      margin-bottom:10px;
+    }
+    h1{
+      font-size:22px;
+      margin:10px 0 5px;
+    }
+    h2{
+      font-size:14px;
+      color:#555;
+      margin:0 0 15px;
+      font-weight:normal;
+    }
+    .lang-switch{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      font-size:14px;
+      margin-bottom:10px;
+    }
+    .lang-switch span{
+      cursor:pointer;
+      color:#e51b20;
+      font-weight:bold;
+    }
+    .buttons a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      background:#e51b20;
+      color:#fff;
+      padding:12px;
+      border-radius:12px;
+      margin:8px 0;
+      font-size:15px;
+    }
+    .buttons a.secondary{
+      background:lch(94.87% 6.83 19.78);
+      color:#e51b20;
+    }
+    .section{
+      text-align:left;
+      margin-top:15px;
+      font-size:14px;
+      color:#333;
+    }
+    .section ul{
+      padding-left:18px;
+    }
+    .section li{
+      margin-bottom:5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="lang-switch">
+    <span onclick="setLang('fr')">FR</span>
+    <span onclick="setLang('ar')">AR</span>
+  </div>
+
+  <img src="channels4_profile.jpg" class="logo" alt="Logo">
+
+  <h1 id="name">Moulay Chrif BAHRI</h1>
+  <h2 id="title">
+    Président et co-fondateur de l’Organisation « Nouveau Souffle »
+  </h2>
+
+  <div class="buttons">
+    <a href="tel:+212610111188"><i class="fa-solid fa-phone"></i> Appeler</a>
+    <a href="https://wa.me/212724974013"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="mailto:nafasjadid2024@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+    <a href="https://www.instagram.com/nouveausouffle2024?igsh=bHdjcGYxdHpydTA=">
+      <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+
+    <a class="secondary" href="data:text/vcard;charset=utf-8,
+BEGIN:VCARD
+VERSION:3.0
+FN:Moulay Chrif BAHRI
+ORG:Nouveau Souffle نفس جديد
+TEL:+212610111188
+EMAIL:nafasjadid2024@gmail.com
+END:VCARD">
+      <i class="fa-solid fa-address-card"></i>
+      Ajouter le contact
+    </a>
+  </div>
+
+  <div class="section" id="skills">
+    <ul>
+      <li>Formateur en secourisme général et sportif</li>
+      <li>Coaching, soft skills et communication</li>
+      <li>Animation sportive et team-building</li>
+      <li>Gestion administrative et financière</li>
+      <li>Planification stratégique</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+function setLang(lang){
+  if(lang === 'ar'){
+    document.documentElement.lang = 'ar';
+    document.body.style.direction = 'rtl';
+    document.getElementById('title').innerText =
+      'رئيس ومؤسس منظمة "نفس جديد" للإغاثة والإسعافات';
+    document.getElementById('skills').innerHTML = `
+      <ul>
+        <li>مكون في الإسعافات العامة والرياضية</li>
+        <li>التواصل والتنشيط والمهارات الناعمة</li>
+        <li>التنشيط الرياضي وبناء الفريق</li>
+        <li>التدبير الإداري والمالي للجمعيات</li>
+        <li>التخطيط الاستراتيجي</li>
+      </ul>`;
+  }else{
+    document.documentElement.lang = 'fr';
+    document.body.style.direction = 'ltr';
+    document.getElementById('title').innerText =
+      'Président et co-fondateur de l’Organisation « Nouveau Souffle »';
+    document.getElementById('skills').innerHTML = `
+      <ul>
+        <li>Formateur en secourisme général et sportif</li>
+        <li>Coaching, soft skills et communication</li>
+        <li>Animation sportive et team-building</li>
+        <li>Gestion administrative et financière</li>
+        <li>Planification stratégique</li>
+      </ul>`;
+  }
+}
+</script>
+
+</body>
+</html>
